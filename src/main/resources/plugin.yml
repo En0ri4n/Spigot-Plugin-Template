@@ -1,0 +1,5 @@
+name: Spigot-Utilities-Plugin
+version: 1.0.0
+main: fr.en0ri4n.spigotutilitiesplugin.SpigotUtilitiesPlugin
+api-version: 1.19
+authors: [ En0ri4n ]
