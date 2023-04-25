@@ -1,4 +1,4 @@
-package fr.en0ri4n.spigotutilitiesplugin.listeners;
+package fr.en0ri4n.plugin.listeners;
 
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;

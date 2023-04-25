@@ -1,4 +1,4 @@
-package fr.en0ri4n.spigotutilitiesplugin.utils;
+package fr.en0ri4n.plugin.utils;
 
 import java.util.List;
 import java.util.Random;

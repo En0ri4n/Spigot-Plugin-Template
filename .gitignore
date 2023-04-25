@@ -118,4 +118,4 @@ run/
 !gradle-wrapper.jar
 
 # Ignore gitignore file itself
-!.gitignore
+.gitignore

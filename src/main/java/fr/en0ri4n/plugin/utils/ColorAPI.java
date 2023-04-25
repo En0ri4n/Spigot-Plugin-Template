@@ -1,4 +1,4 @@
-package fr.en0ri4n.spigotutilitiesplugin.utils;
+package fr.en0ri4n.plugin.utils;
 
 import com.google.common.collect.ImmutableMap;
 import net.md_5.bungee.api.ChatColor;

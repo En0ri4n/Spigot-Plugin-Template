@@ -1,6 +1,6 @@
-package fr.en0ri4n.spigotutilitiesplugin.utils;
+package fr.en0ri4n.plugin.utils;
 
-import fr.en0ri4n.spigotutilitiesplugin.SpigotUtilitiesPlugin;
+import fr.en0ri4n.plugin.SpigotPlugin;
 import org.bukkit.Chunk;
 import org.bukkit.NamespacedKey;
 import org.bukkit.World;
@@ -27,7 +27,7 @@ public class PersistentDataHelper
      */
     private static JavaPlugin getPlugin()
     {
-        return SpigotUtilitiesPlugin.get();
+        return SpigotPlugin.get();
     }
 
     /**

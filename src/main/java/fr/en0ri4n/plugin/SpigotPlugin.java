@@ -1,8 +1,8 @@
-package fr.en0ri4n.spigotutilitiesplugin;
+package fr.en0ri4n.plugin;
 
-import fr.en0ri4n.spigotutilitiesplugin.utils.ColorAPI;
-import fr.en0ri4n.spigotutilitiesplugin.utils.ItemFactory;
-import fr.en0ri4n.spigotutilitiesplugin.utils.PersistentDataHelper;
+import fr.en0ri4n.plugin.utils.ColorAPI;
+import fr.en0ri4n.plugin.utils.ItemFactory;
+import fr.en0ri4n.plugin.utils.PersistentDataHelper;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
@@ -10,11 +10,9 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import static fr.en0ri4n.spigotutilitiesplugin.utils.Colors.*;
-
-public final class SpigotUtilitiesPlugin extends JavaPlugin
+public final class SpigotPlugin extends JavaPlugin
 {
-    private static SpigotUtilitiesPlugin instance;
+    private static SpigotPlugin instance;
 
     @Override
     public void onEnable()
@@ -33,7 +31,7 @@ public final class SpigotUtilitiesPlugin extends JavaPlugin
         // Plugin shutdown logic
     }
 
-    public static SpigotUtilitiesPlugin get()
+    public static SpigotPlugin get()
     {
         return instance;
     }

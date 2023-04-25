@@ -1,23 +1,24 @@
-package fr.en0ri4n.spigotutilitiesplugin.runnables.utils;
+package fr.en0ri4n.plugin.runnables.utils;
 
-import fr.en0ri4n.spigotutilitiesplugin.SpigotUtilitiesPlugin;
+import fr.en0ri4n.plugin.SpigotPlugin;
 import org.bukkit.Bukkit;
+import org.bukkit.plugin.java.JavaPlugin;
 
 public class TaskHelper
 {
-    public static int startScheduledTask(Runnable task, long period)
+    private static JavaPlugin getPlugin()
     {
-        return Bukkit.getScheduler().scheduleSyncRepeatingTask(SpigotUtilitiesPlugin.get(), task, 0L, period);
+        return SpigotPlugin.get();
     }
 
-    public static void cancelTask(int taskId)
+    public static int startScheduledTask(Runnable task, long period)
     {
-        Bukkit.getScheduler().cancelTask(taskId);
+        return Bukkit.getScheduler().scheduleSyncRepeatingTask(getPlugin(), task, 0L, period);
     }
 
     public static void runTaskLater(Runnable task, long delay)
     {
-        Bukkit.getScheduler().runTaskLater(SpigotUtilitiesPlugin.get(), task, delay);
+        Bukkit.getScheduler().runTaskLater(getPlugin(), task, delay);
     }
 
     public static void stopTask(int taskId)

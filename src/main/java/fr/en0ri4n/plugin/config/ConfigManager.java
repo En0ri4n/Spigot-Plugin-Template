@@ -1,4 +1,4 @@
-package fr.en0ri4n.spigotutilitiesplugin.config;
+package fr.en0ri4n.plugin.config;
 
 import java.util.ArrayList;
 import java.util.Collections;

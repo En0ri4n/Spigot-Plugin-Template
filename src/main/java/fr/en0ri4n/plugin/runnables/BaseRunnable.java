@@ -1,6 +1,6 @@
-package fr.en0ri4n.spigotutilitiesplugin.runnables;
+package fr.en0ri4n.plugin.runnables;
 
-import fr.en0ri4n.spigotutilitiesplugin.runnables.utils.TaskHelper;
+import fr.en0ri4n.plugin.runnables.utils.TaskHelper;
 
 public abstract class BaseRunnable implements Runnable
 {

@@ -1,4 +1,4 @@
-package fr.en0ri4n.spigotutilitiesplugin.commands;
+package fr.en0ri4n.plugin.commands;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
