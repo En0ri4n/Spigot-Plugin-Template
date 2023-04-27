@@ -7,11 +7,11 @@ import org.bukkit.command.TabCompleter;
 
 import java.util.List;
 
-public abstract class CommandBase implements CommandExecutor
+public abstract class BaseCommand implements CommandExecutor
 {
     private final String name;
 
-    public CommandBase(String name)
+    public BaseCommand(String name)
     {
         this.name = name;
     }

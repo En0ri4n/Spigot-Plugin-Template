@@ -9,13 +9,13 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.logging.Level;
 
-public abstract class ConfigBase
+public abstract class BaseConfig
 {
     private final JavaPlugin plugin;
     private final String configFileName;
     private final boolean shouldReplace;
 
-    protected ConfigBase(JavaPlugin plugin, String configFileName, boolean shouldReplace)
+    protected BaseConfig(JavaPlugin plugin, String configFileName, boolean shouldReplace)
     {
         this.plugin = plugin;
         this.configFileName = configFileName;

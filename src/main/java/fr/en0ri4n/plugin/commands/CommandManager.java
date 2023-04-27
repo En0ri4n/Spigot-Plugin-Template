@@ -11,19 +11,19 @@ public class CommandManager
 {
     private static CommandManager instance;
 
-    private final List<CommandBase> commands;
+    private final List<BaseCommand> commands;
 
     private CommandManager()
     {
         commands = new ArrayList<>();
     }
 
-    public List<CommandBase> getCommands()
+    public List<BaseCommand> getCommands()
     {
         return commands;
     }
 
-    public CommandManager addCommand(CommandBase... commands)
+    public CommandManager addCommand(BaseCommand... commands)
     {
         Collections.addAll(this.commands, commands);
         return instance;
@@ -31,7 +31,7 @@ public class CommandManager
 
     public void registerCommands()
     {
-        for(CommandBase command : instance.commands)
+        for(BaseCommand command : instance.commands)
         {
             PluginCommand pluginCommand = Bukkit.getPluginCommand(command.getName());
             if(pluginCommand == null) throw new IllegalStateException("Command " + command.getName() + " not found");

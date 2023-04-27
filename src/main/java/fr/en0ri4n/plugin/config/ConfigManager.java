@@ -8,19 +8,19 @@ public class ConfigManager
 {
     private static ConfigManager instance;
 
-    private final List<ConfigBase> configs;
+    private final List<BaseConfig> configs;
 
     private ConfigManager()
     {
         configs = new ArrayList<>();
     }
 
-    public List<ConfigBase> getConfigs()
+    public List<BaseConfig> getConfigs()
     {
         return configs;
     }
 
-    public ConfigManager addConfig(ConfigBase... configurations)
+    public ConfigManager addConfig(BaseConfig... configurations)
     {
         Collections.addAll(configs, configurations);
         return instance;
@@ -28,7 +28,7 @@ public class ConfigManager
 
     public void loadConfigs()
     {
-        for(ConfigBase config : instance.configs)
+        for(BaseConfig config : instance.configs)
             config.load();
     }
 
@@ -44,7 +44,6 @@ public class ConfigManager
      * Get the ConfigManager instance<br>
      * <b>WARNING: </b> This method will return null if the ConfigManager instance is not created yet<br>
      * Use {@link ConfigManager#create()} to create the ConfigManager instance
-     * @return
      */
     public static ConfigManager get()
     {
