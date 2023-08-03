@@ -1,14 +1,23 @@
-package fr.en0ri4n.plugin.runnables.utils;
+package fr.en0ri4n.plugin.runnables;
 
-import fr.en0ri4n.plugin.SpigotPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class TaskHelper
 {
+    private static JavaPlugin pluginInstance;
+
+    public static void init(JavaPlugin plugin)
+    {
+        pluginInstance = plugin;
+    }
+
     private static JavaPlugin getPlugin()
     {
-        return SpigotPlugin.get();
+        if(pluginInstance == null)
+            throw new IllegalStateException("TaskHelper not initialized !");
+
+        return pluginInstance;
     }
 
     public static int startScheduledTask(Runnable task, long period)

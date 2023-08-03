@@ -1,4 +1,4 @@
-package fr.en0ri4n.plugin.scoreboard.utils;
+package fr.en0ri4n.plugin.scoreboard;
 
 import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Scoreboard;

@@ -1,4 +1,4 @@
-package fr.en0ri4n.plugin.runnables.utils;
+package fr.en0ri4n.plugin.runnables;
 
 public abstract class BaseRunnable implements Runnable
 {
