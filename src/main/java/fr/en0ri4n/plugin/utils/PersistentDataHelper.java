@@ -1,6 +1,5 @@
 package fr.en0ri4n.plugin.utils;
 
-import fr.en0ri4n.plugin.SpigotPlugin;
 import org.bukkit.Chunk;
 import org.bukkit.NamespacedKey;
 import org.bukkit.World;
@@ -15,11 +14,18 @@ import org.bukkit.plugin.java.JavaPlugin;
 @SuppressWarnings("unused")
 public class PersistentDataHelper
 {
+    private static JavaPlugin pluginInstance;
+
     public static final ItemStackFactory ITEMSTACK = new ItemStackFactory();
     public static final Factory<Container> CONTAINER = new Factory<>();
     public static final Factory<Entity> ENTITY = new Factory<>();
     public static final Factory<World> WORLD = new Factory<>();
     public static final Factory<Chunk> CHUNK = new Factory<>();
+
+    public static void init(JavaPlugin plugin)
+    {
+        pluginInstance = plugin;
+    }
 
     /**
      * Get the plugin instance, used to centralize the plugin instance
@@ -27,7 +33,10 @@ public class PersistentDataHelper
      */
     private static JavaPlugin getPlugin()
     {
-        return SpigotPlugin.get();
+        if(pluginInstance == null)
+            throw new RuntimeException("PersistentDataHelper not initialized !");
+
+        return pluginInstance;
     }
 
     /**

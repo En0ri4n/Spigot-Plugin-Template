@@ -1,6 +1,4 @@
-package fr.en0ri4n.plugin.runnables;
-
-import fr.en0ri4n.plugin.runnables.utils.TaskHelper;
+package fr.en0ri4n.plugin.runnables.utils;
 
 public abstract class BaseRunnable implements Runnable
 {
@@ -12,7 +10,7 @@ public abstract class BaseRunnable implements Runnable
     /**
      * Start a repeating task with a counter that decrease
      * @param counter The counter
-     * @param delay The delay between each execution
+     * @param delay The delay between each execution (in ticks)
      */
     public BaseRunnable(int counter, int delay)
     {
@@ -24,7 +22,7 @@ public abstract class BaseRunnable implements Runnable
 
     /**
      * Start a repeating task with a counter that increase
-     * @param delay The delay between each execution
+     * @param delay The delay between each execution (in ticks)
      */
     public BaseRunnable(int delay)
     {
@@ -50,18 +48,17 @@ public abstract class BaseRunnable implements Runnable
     @Override
     public void run()
     {
+        if(!increaseCounter && getCounter() <= 0)
+            stop();
+
+        runTask();
+
         if(canCount())
         {
-            runTask();
-
             if (increaseCounter)
                 increaseCounter();
             else
                 decreaseCounter();
-        }
-        else
-        {
-            stop();
         }
     }
 
@@ -70,11 +67,11 @@ public abstract class BaseRunnable implements Runnable
     protected abstract void onStop();
 
     /**
-     * Reset the counter to default value (-1)
+     * Reset the counter to default value (Max counter or -1 if the counter increase)
      */
     protected void resetCounter()
     {
-        counter = -1;
+        counter = maxCounter;
     }
 
     /**
@@ -118,7 +115,7 @@ public abstract class BaseRunnable implements Runnable
      */
     public boolean canCount()
     {
-        return increaseCounter || getCounter() >= 0;
+        return increaseCounter || getCounter() > 0;
     }
 
     /**

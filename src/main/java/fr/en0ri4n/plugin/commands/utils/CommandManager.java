@@ -1,4 +1,4 @@
-package fr.en0ri4n.plugin.commands;
+package fr.en0ri4n.plugin.commands.utils;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.PluginCommand;
@@ -23,7 +23,7 @@ public class CommandManager
         return commands;
     }
 
-    public CommandManager addCommand(BaseCommand... commands)
+    public CommandManager addCommands(BaseCommand... commands)
     {
         Collections.addAll(this.commands, commands);
         return instance;

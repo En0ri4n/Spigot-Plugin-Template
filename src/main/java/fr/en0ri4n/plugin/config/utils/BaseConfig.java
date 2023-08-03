@@ -1,4 +1,4 @@
-package fr.en0ri4n.plugin.config;
+package fr.en0ri4n.plugin.config.utils;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -24,7 +24,7 @@ public abstract class BaseConfig
 
     public final void load()
     {
-        plugin.saveResource(configFileName, shouldReplace);
+        saveResource(configFileName, shouldReplace);
 
         FileConfiguration config = YamlConfiguration.loadConfiguration(new File(plugin.getDataFolder(), configFileName));
 

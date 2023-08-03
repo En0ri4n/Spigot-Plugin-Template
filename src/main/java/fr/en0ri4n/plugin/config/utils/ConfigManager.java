@@ -1,4 +1,4 @@
-package fr.en0ri4n.plugin.config;
+package fr.en0ri4n.plugin.config.utils;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,7 +20,7 @@ public class ConfigManager
         return configs;
     }
 
-    public ConfigManager addConfig(BaseConfig... configurations)
+    public ConfigManager addConfigs(BaseConfig... configurations)
     {
         Collections.addAll(configs, configurations);
         return instance;
