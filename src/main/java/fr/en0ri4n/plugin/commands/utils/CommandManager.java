@@ -57,11 +57,12 @@ public class CommandManager
      * Get the CommandManager instance<br>
      * <b>WARNING: </b> This method will return null if the CommandManager instance is not created yet<br>
      * Use {@link CommandManager#create()} to create the CommandManager instance
-     *
-     * @return
      */
     public static CommandManager get()
     {
+        if(instance == null)
+            throw new IllegalStateException("CommandManager not created");
+
         return instance;
     }
 }

@@ -71,6 +71,9 @@ public class ListenerManager
      */
     public static ListenerManager get()
     {
+        if(instance == null)
+            throw new IllegalStateException("ListenerManager not created");
+
         return instance;
     }
 }

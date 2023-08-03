@@ -47,6 +47,9 @@ public class ConfigManager
      */
     public static ConfigManager get()
     {
+        if(instance == null)
+            throw new IllegalStateException("ConfigManager not created");
+
         return instance;
     }
 }
